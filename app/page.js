@@ -1,66 +1,81 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="home">
+
+      {/* NAVBAR */}
+      <nav className="navbar">
+        <Link href="/">
+          <h1>FurniHome</h1>
+        </Link>
+
+        <div className="links">
+          <Link href="/product">Shop</Link>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </nav>
+
+      {/* HERO */}
+      <section className="hero">
+        <h1>Modern Furniture Store</h1>
+        <p>Stylish furniture for your dream home</p>
+
+        <div className="hero-btns">
+          <button>Shop Now</button>
+          <button className="outline">Explore</button>
         </div>
-      </main>
+      </section>
+
+      {/* DISCOUNT BANNER */}
+      <section className="banner">
+        <h2>🔥 Flat 30% OFF on New Collection</h2>
+        <p>Limited time offer for premium furniture</p>
+      </section>
+
+      {/* CATEGORIES */}
+      <section className="categories">
+
+      <Link href="/chair"> <div className="cat-card">🪑 Chairs</div></Link> 
+     <Link href="/sofa">  <div className="cat-card">🛋️ Sofas</div></Link> 
+      <Link href="/bed"> <div className="cat-card">🛏️ Beds</div></Link> 
+       <Link href="/table"> <div className="cat-card">🍽️ Tables</div></Link>
+
+      </section>
+
+      {/* PRODUCTS */}
+      <section className="cards">
+
+        <div className="card">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85" />
+          <h2>Wooden Chair</h2>
+          <p>$120</p>
+          <button>Add To Cart</button>
+        </div>
+
+        <div className="card">
+          <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9" />
+          <h2>Luxury Sofa</h2>
+          <p>$450</p>
+          <button>Add To Cart</button>
+        </div>
+
+        <div className="card">
+          <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4" />
+          <h2>Modern Table</h2>
+          <p>$220</p>
+          <button>Add To Cart</button>
+        </div>
+
+      </section>
+
+      {/* FOOTER CTA */}
+      <section className="cta">
+        <h2>Want Custom Furniture?</h2>
+        <button>Contact Us</button>
+      </section>
+
     </div>
   );
 }
