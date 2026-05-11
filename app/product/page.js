@@ -1,5 +1,13 @@
+async function delay() {
+  await new Promise((resolve) =>
+    setTimeout(resolve, 1000)
+  );
+}
 
-export default function Products() {
+export default async function Products() {
+
+  await delay();
+
   const products = [
     {
       id: 1,
@@ -65,21 +73,32 @@ export default function Products() {
 
   return (
     <div className="container">
-      <h1 className="title">Home Appliances Products</h1>
+
+      <h1 className="title">
+        Home Appliances Products
+      </h1>
 
       <div className="grid">
         {products.map((item) => (
           <div className="card" key={item.id}>
-            <img src={item.img} alt={item.name} />
+
+            <img
+              src={item.img}
+              alt={item.name}
+            />
 
             <h3>{item.name}</h3>
 
-            <p className="price">₹ {item.price.toLocaleString()}</p>
+            <p className="price">
+              ₹ {item.price.toLocaleString()}
+            </p>
 
             <button>Add to Cart</button>
+
           </div>
         ))}
       </div>
+
     </div>
   );
 }

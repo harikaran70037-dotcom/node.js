@@ -5,18 +5,7 @@ export default function Home() {
     <div className="home">
 
       {/* NAVBAR */}
-      <nav className="navbar">
-        <Link href="/">
-          <h1>FurniHome</h1>
-        </Link>
-
-        <div className="links">
-          <Link href="/product">Shop</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
-        </div>
-      </nav>
-
+  
       {/* HERO */}
       <section className="hero">
         <h1>Modern Furniture Store</h1>
